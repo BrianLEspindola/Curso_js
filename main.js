@@ -8,6 +8,7 @@ class Producto {
       this.precio = precio;
       this.imagen = imagen;
       this.descripcion = descripcion;
+      this.cantidad = cantidad;
       this.vendido = false;
     }
   }
@@ -68,12 +69,12 @@ class Producto {
         Cantidad: ${producto.cantidad}
         `
         );
-        break
+        break;
       } else{
         console.log(`Producto no disponible`);
-        break
+        break;
       }
     }
   }
   
-  consultarProductos()
+  consultarProductos();
