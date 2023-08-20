@@ -1,6 +1,9 @@
 //VENTA DE JOYERIA
+
+//Molde creador de productos
+
 class Producto {
-       constructor(nombre, precio, imagen, descripcion) {
+       constructor(nombre, precio, imagen, descripcion, cantidad) {
          this.nombre = nombre;
          this.precio = precio;
          this.imagen = imagen;
@@ -12,12 +15,14 @@ class Producto {
          this.vendido = true;
        }
      }
+//productos en el mercado
 
  const producto1 = new Producto(
    "cadenita corazon",
    200,
-   "img src=../imagenes/cadenita_corazon.JPG"";
+   "img src=../imagenes/cadenita_corazon.JPG",
    "collar de oro 18k",
+   2,
     );
 
  const producto2 = new Producto(
@@ -25,6 +30,7 @@ class Producto {
    200,
    "img src=../imagenes/cadenitas_s_l.JPG",
    "collar de oro 18k",
+   2,
  );
 
  const producto3 = new Producto(
@@ -32,6 +38,7 @@ class Producto {
     200,
     "src=../imagenes/cadenita_enchapada.JPG",
     "cadenita enchapada en oro",
+    2,
  );
 
  const producto4 = new Producto(
@@ -39,40 +46,44 @@ class Producto {
     200,
     "src=../imagenes/aritos_enchapados.JPG",
     "aritos de oro 18k",
- );
-
- const producto5 = new Producto(
-    "cadena trensada",
-    150,
-    "src=../imagenes/cadena_trensada.JPG",
-    "Cadena trensada de plata 18cm",
- );
-
- const producto6 = new Producto(
-    "aritos de oro",
-    300,
-    "src=../imagenes/aros_oro.JPG",
-    "pulcera de oro 18k medida 7cm",
- );
-
- const producto7 = new Producto(
-    "cadenita oro",
-    300,
-    "src=../imagenes/cadenita_enchapada.JPG",
-    "pulcera de oro 18k medida 7cm",
+    2,
  );
 
 
+//array con productos
 
- vender() {
+const arrayProducto = [producto1, producto2, producto3, producto4,];
+
+ let nombre = prompt("Ingrese el nombre del producto  consultar");
+
+while (nombre != "ESC") {
+  let producto;
+  for (const item of productos) {
+    if (item.nombre === nombre) {
+      producto = item;
+    }
+  }
+
+  if (producto) {
+    let mensaje = `
+      Nombre: ${producto.nombre}
+      Imagen: ${producto.imagen}
+      Precio: $${producto.precio}
+      Descripcion: ${producto.descripcion}
+      Cantidad: ${producto.cantidad}
+    `;
+
+    alert(mensaje);
+  } else {
+    alert("El producto no se encuentra disponible");
+  }
+
+  nombre = prompt("Ingrese el nombre del producto a  consultar");
+}
+
+vender()
     if (this.cantidad === 0) {
       console.log("No quedan productos");
     } else {
       this.cantidad -= 1;
     }
-  }
-
-  console.log(producto1);
- producto1.vender();
- console.log(producto1);
-    
