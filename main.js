@@ -11,7 +11,7 @@ class Producto {
       this.vendido = false;
     }
   }
-  //productos en el mercado
+  //Productos en el mercado
   
   const producto1 = new Producto(
     "cadenita corazon",
@@ -46,10 +46,11 @@ class Producto {
   );
   
   
-  //array con productos
+  //Array con productos
   
   const arrayProducto = [producto1, producto2, producto3, producto4,];
   
+  //Declaro funcion para consultar prodcutos
   function consultarProductos(){
   
     let nombre = prompt("Ingrese el nombre del producto  consultar, para salir ingresar ESC");
